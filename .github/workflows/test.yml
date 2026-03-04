@@ -18,7 +18,7 @@ jobs:
           java-version: '17'      
 
       - name: Build project with Maven
-        run: mvn compile
+        run: cd AGILES_RECU && mvn compile
 
       - name: Run Checkstyle
         run: cd AGILES_RECU && mvn checkstyle:check
