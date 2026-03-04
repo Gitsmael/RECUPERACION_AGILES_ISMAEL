@@ -18,4 +18,4 @@ jobs:
           java-version: '17'        # versión de Java que uses
           
       - name: Run Checkstyle
-        run: mvn checkstyle:check
+        run: cd AGILES_RECU && mvn checkstyle:check
