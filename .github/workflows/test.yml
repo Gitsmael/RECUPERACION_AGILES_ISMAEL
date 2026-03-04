@@ -1,0 +1,21 @@
+name: Java Checkstyle
+
+on:
+  pull_request
+
+jobs:
+  checkstyle:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'   # puedes usar otra JDK si quieres
+          java-version: '17'        # versión de Java que uses
+          
+      - name: Run Checkstyle
+        run: cd AGILES_RECU && mvn checkstyle:check
