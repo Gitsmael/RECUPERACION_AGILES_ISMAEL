@@ -14,8 +14,11 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
-          distribution: 'temurin'   
-          java-version: '17'      
+          distribution: 'temurin'   # puedes usar otra JDK si quieres
+          java-version: '17'        # versión de Java que uses
+
+      - name: Build project with Maven
+        run: mvn compile
 
       - name: Run Checkstyle
-        run: cd AGILES_RECU && mvn checkstyle:check
+        run: cd RECUPERACION_AGILES_ISMAEL/AGILES_RECU && mvn checkstyle:check
